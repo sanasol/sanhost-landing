@@ -36,7 +36,7 @@
   "dl_steamdeck_note": "Modalità Desktop &rarr; avvia AppImage",
 
   "card_hosting_title": "Hosting Server Gratuito",
-  "card_hosting_text": "Ottieni il tuo server Hytale gratuito con 3 GB di RAM, supporto DualAuth e pannello di controllo completo. Nessuna carta di credito necessaria &mdash; attivazione istantanea.",
+  "card_hosting_text": "Ottieni il tuo server Hytale gratuito con 5 GB di RAM, supporto DualAuth e pannello di controllo completo. Nessuna carta di credito necessaria &mdash; attivazione istantanea.",
   "card_hosting_link": "Crea server gratuito",
   "card_serverlist_title": "Lista Server",
   "card_serverlist_text": "Esplora e scopri i server della community Hytale F2P. Trova partite attive, vota i tuoi preferiti e connettiti con altri giocatori.",
@@ -58,7 +58,7 @@
   "about_p2": "Il progetto include:",
   "about_item_launcher": "<strong>Launcher F2P</strong> &mdash; Un launcher multipiattaforma (Windows, macOS, Linux) che applica patch al client Hytale per l'accesso gratuito con aggiornamenti automatici",
   "about_item_dualauth": "<strong>Agente DualAuth</strong> &mdash; Un sistema di autenticazione lato server che permette a giocatori ufficiali e F2P di giocare sullo stesso server",
-  "about_item_hosting": "<strong>Hosting Server Gratuito</strong> &mdash; Creazione istantanea di server con 3 GB di RAM, DualAuth preconfigurato e pannello di gestione completo",
+  "about_item_hosting": "<strong>Hosting Server Gratuito</strong> &mdash; Creazione istantanea di server con 5 GB di RAM, DualAuth preconfigurato e pannello di gestione completo",
   "about_item_serverlist": "<strong>Lista Server</strong> &mdash; Un elenco gestito dalla community con i server attivi di Hytale F2P su <a href=\"https://santale.top\" style=\"color:#818cf8\">santale.top</a>",
   "about_p3": "Che tu voglia ospitare il tuo server Hytale, unirti a server della community o contribuire allo sviluppo del progetto, SanHost è la casa del multiplayer gratuito di Hytale.",
 

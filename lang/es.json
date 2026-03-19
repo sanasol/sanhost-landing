@@ -36,7 +36,7 @@
   "dl_steamdeck_note": "Modo Escritorio &rarr; ejecutar AppImage",
 
   "card_hosting_title": "Hosting de Servidor Gratis",
-  "card_hosting_text": "Consigue tu propio servidor de Hytale gratis con 3 GB de RAM, soporte DualAuth y panel de control completo. Sin tarjeta de crédito &mdash; activación instantánea.",
+  "card_hosting_text": "Consigue tu propio servidor de Hytale gratis con 5 GB de RAM, soporte DualAuth y panel de control completo. Sin tarjeta de crédito &mdash; activación instantánea.",
   "card_hosting_link": "Crear servidor gratis",
   "card_serverlist_title": "Lista de Servidores",
   "card_serverlist_text": "Explora y descubre servidores de la comunidad Hytale F2P. Encuentra partidas activas, vota por tus favoritos y conecta con otros jugadores.",
@@ -58,7 +58,7 @@
   "about_p2": "El proyecto incluye:",
   "about_item_launcher": "<strong>Launcher F2P</strong> &mdash; Un launcher multiplataforma (Windows, macOS, Linux) que parchea el cliente de Hytale para acceso gratuito con actualizaciones automáticas",
   "about_item_dualauth": "<strong>Agente DualAuth</strong> &mdash; Un sistema de autenticación del lado del servidor que permite a jugadores oficiales y F2P jugar en el mismo servidor",
-  "about_item_hosting": "<strong>Hosting de Servidor Gratis</strong> &mdash; Creación instantánea de servidores con 3 GB de RAM, DualAuth preconfigurado y un panel de administración completo",
+  "about_item_hosting": "<strong>Hosting de Servidor Gratis</strong> &mdash; Creación instantánea de servidores con 5 GB de RAM, DualAuth preconfigurado y un panel de administración completo",
   "about_item_serverlist": "<strong>Lista de Servidores</strong> &mdash; Un directorio mantenido por la comunidad con los servidores activos de Hytale F2P en <a href=\"https://santale.top\" style=\"color:#818cf8\">santale.top</a>",
   "about_p3": "Ya sea que quieras alojar tu propio servidor de Hytale, unirte a servidores de la comunidad o contribuir al desarrollo del proyecto, SanHost es el hogar del multijugador gratuito de Hytale.",
 

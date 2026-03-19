@@ -36,7 +36,7 @@
   "dl_steamdeck_note": "Mode Bureau &rarr; lancer AppImage",
 
   "card_hosting_title": "Hébergement Gratuit",
-  "card_hosting_text": "Obtenez votre propre serveur Hytale gratuit avec 3 Go de RAM, le support DualAuth et un panneau de contrôle complet. Aucune carte bancaire requise &mdash; mise en service instantanée.",
+  "card_hosting_text": "Obtenez votre propre serveur Hytale gratuit avec 5 Go de RAM, le support DualAuth et un panneau de contrôle complet. Aucune carte bancaire requise &mdash; mise en service instantanée.",
   "card_hosting_link": "Créer un serveur gratuit",
   "card_serverlist_title": "Liste des serveurs",
   "card_serverlist_text": "Parcourez et découvrez les serveurs communautaires Hytale F2P. Trouvez des parties actives, votez pour vos favoris et connectez-vous avec d'autres joueurs.",
@@ -58,7 +58,7 @@
   "about_p2": "Le projet comprend :",
   "about_item_launcher": "<strong>Launcher F2P</strong> &mdash; Un launcher multiplateforme (Windows, macOS, Linux) qui patche le client Hytale pour un accès gratuit avec mises à jour automatiques",
   "about_item_dualauth": "<strong>Agent DualAuth</strong> &mdash; Un système d'authentification côté serveur qui permet aux joueurs officiels et F2P de coexister sur le même serveur",
-  "about_item_hosting": "<strong>Hébergement Gratuit</strong> &mdash; Mise en service instantanée avec 3 Go de RAM, DualAuth préconfiguré et un panneau de gestion complet",
+  "about_item_hosting": "<strong>Hébergement Gratuit</strong> &mdash; Mise en service instantanée avec 5 Go de RAM, DualAuth préconfiguré et un panneau de gestion complet",
   "about_item_serverlist": "<strong>Liste des serveurs</strong> &mdash; Un annuaire communautaire des serveurs Hytale F2P actifs sur <a href=\"https://santale.top\" style=\"color:#818cf8\">santale.top</a>",
   "about_p3": "Que vous souhaitiez héberger votre propre serveur Hytale, rejoindre des serveurs communautaires existants ou contribuer au développement du projet, SanHost est le foyer du multijoueur Hytale free-to-play.",
 

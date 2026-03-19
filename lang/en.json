@@ -36,7 +36,7 @@
   "dl_steamdeck_note": "Desktop Mode &rarr; run AppImage",
 
   "card_hosting_title": "Free Server Hosting",
-  "card_hosting_text": "Get your own free Hytale server with 3 GB RAM, DualAuth support, and full control panel. No credit card needed &mdash; instant provisioning.",
+  "card_hosting_text": "Get your own free Hytale server with 5 GB RAM, DualAuth support, and full control panel. No credit card needed &mdash; instant provisioning.",
   "card_hosting_link": "Create free server",
   "card_serverlist_title": "Server List",
   "card_serverlist_text": "Browse and discover Hytale F2P community servers. Find active games, vote for your favorites, and connect with other players.",
@@ -58,7 +58,7 @@
   "about_p2": "The project includes:",
   "about_item_launcher": "<strong>F2P Launcher</strong> &mdash; A cross-platform launcher (Windows, macOS, Linux) that patches the Hytale client for free-to-play access with automatic updates",
   "about_item_dualauth": "<strong>DualAuth Agent</strong> &mdash; A server-side authentication system that allows both official and F2P players on the same server",
-  "about_item_hosting": "<strong>Free Server Hosting</strong> &mdash; Instant server provisioning with 3 GB RAM, DualAuth pre-configured, and a full management panel",
+  "about_item_hosting": "<strong>Free Server Hosting</strong> &mdash; Instant server provisioning with 5 GB RAM, DualAuth pre-configured, and a full management panel",
   "about_item_serverlist": "<strong>Server List</strong> &mdash; A community-maintained directory of active Hytale F2P servers at <a href=\"https://santale.top\" style=\"color:#818cf8\">santale.top</a>",
   "about_p3": "Whether you want to host your own Hytale server, join existing community servers, or contribute to the project's development, SanHost is the home for Hytale free-to-play multiplayer.",
 

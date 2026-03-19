@@ -36,7 +36,7 @@
   "dl_steamdeck_note": "Desktop-Modus &rarr; AppImage starten",
 
   "card_hosting_title": "Kostenloses Server-Hosting",
-  "card_hosting_text": "Erhalte deinen eigenen kostenlosen Hytale-Server mit 3 GB RAM, DualAuth-Unterstützung und vollem Kontrollpanel. Keine Kreditkarte nötig &mdash; sofortige Bereitstellung.",
+  "card_hosting_text": "Erhalte deinen eigenen kostenlosen Hytale-Server mit 5 GB RAM, DualAuth-Unterstützung und vollem Kontrollpanel. Keine Kreditkarte nötig &mdash; sofortige Bereitstellung.",
   "card_hosting_link": "Kostenlosen Server erstellen",
   "card_serverlist_title": "Serverliste",
   "card_serverlist_text": "Durchsuche und entdecke Hytale F2P Community-Server. Finde aktive Spiele, stimme für deine Favoriten und verbinde dich mit anderen Spielern.",
@@ -58,7 +58,7 @@
   "about_p2": "Das Projekt umfasst:",
   "about_item_launcher": "<strong>F2P Launcher</strong> &mdash; Ein plattformübergreifender Launcher (Windows, macOS, Linux), der den Hytale-Client für kostenlosen Zugang patcht, mit automatischen Updates",
   "about_item_dualauth": "<strong>DualAuth Agent</strong> &mdash; Ein serverseitiges Authentifizierungssystem, das sowohl offizielle als auch F2P-Spieler auf demselben Server ermöglicht",
-  "about_item_hosting": "<strong>Kostenloses Server-Hosting</strong> &mdash; Sofortige Serverbereitstellung mit 3 GB RAM, vorkonfiguriertem DualAuth und vollem Verwaltungspanel",
+  "about_item_hosting": "<strong>Kostenloses Server-Hosting</strong> &mdash; Sofortige Serverbereitstellung mit 5 GB RAM, vorkonfiguriertem DualAuth und vollem Verwaltungspanel",
   "about_item_serverlist": "<strong>Serverliste</strong> &mdash; Ein von der Community gepflegtes Verzeichnis aktiver Hytale F2P Server auf <a href=\"https://santale.top\" style=\"color:#818cf8\">santale.top</a>",
   "about_p3": "Ob du deinen eigenen Hytale-Server hosten, bestehenden Community-Servern beitreten oder zur Entwicklung des Projekts beitragen möchtest &mdash; SanHost ist die Heimat für Hytale Free-to-Play Multiplayer.",
 
