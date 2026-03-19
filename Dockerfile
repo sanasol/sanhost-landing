@@ -3,6 +3,7 @@ WORKDIR /build
 COPY lang/ lang/
 COPY template.html .
 COPY build.js .
+COPY img/ img/
 COPY html/ html/
 RUN node build.js
 

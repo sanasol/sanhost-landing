@@ -16,7 +16,7 @@
 <meta property="og:description" content="{{og_description}}">
 <meta property="og:url" content="{{og_url}}">
 <meta property="og:site_name" content="SanHost - Hytale F2P">
-<meta property="og:image" content="https://sanhost.net/og-image.png">
+<meta property="og:image" content="https://sanhost.net/img/og-image.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1456">
 <meta property="og:image:height" content="816">
@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{twitter_title}}">
 <meta name="twitter:description" content="{{twitter_description}}">
-<meta name="twitter:image" content="https://sanhost.net/og-image.png">
+<meta name="twitter:image" content="https://sanhost.net/img/og-image.png">
 
 <!-- Alternate languages -->
 {{hreflang_tags}}
@@ -62,95 +62,159 @@
 }
 </script>
 
+<!-- Structured Data: SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "F2P Evo Launcher",
+  "operatingSystem": "Windows, macOS, Linux",
+  "applicationCategory": "GameApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "url": "https://sanhost.net"
+}
+</script>
+
 <!-- Analytics -->
 <script defer src="https://u.statbate.com/script.js" data-website-id="a4e92b24-54af-4039-afde-a32efd7512b1"></script>
 
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#080a0f;color:#e2e8f0;min-height:100vh;overflow-x:hidden}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0c1222;color:#f1f5f9;min-height:100vh;overflow-x:hidden}
 
-  .bg-grid{position:fixed;inset:0;background-image:linear-gradient(rgba(99,102,241,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.03) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0}
-  .bg-glow{position:fixed;top:-40%;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(99,102,241,.12) 0%,rgba(139,92,246,.06) 40%,transparent 70%);pointer-events:none;z-index:0}
+  /* Full-screen game background */
+  .bg-img{position:fixed;inset:0;background:url('/img/bg.jpg') center/cover no-repeat;z-index:0}
+  .bg-overlay{position:fixed;inset:0;background:linear-gradient(180deg,rgba(12,18,34,.55) 0%,rgba(12,18,34,.82) 50%,rgba(12,18,34,.96) 100%);z-index:0}
+
+  /* Glass mixin — used by cards, nav, sections */
+  .glass{background:rgba(15,20,35,.72);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.08);border-radius:16px}
+  .glass-light{background:rgba(15,20,35,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.06);border-radius:12px}
 
   .container{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 20px}
 
-  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
-  .logo{font-size:1.3rem;font-weight:700;letter-spacing:-.02em;text-decoration:none;color:#e2e8f0}
-  .logo span{background:linear-gradient(135deg,#818cf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  /* Nav */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;margin-top:12px;border-radius:16px;background:rgba(15,20,35,.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.06)}
+  .logo{font-size:1.3rem;font-weight:700;letter-spacing:-.02em;text-decoration:none;color:#f1f5f9}
+  .logo span{background:linear-gradient(135deg,#a78bfa,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .nav-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
   .nav-links a{color:#94a3b8;text-decoration:none;font-size:.9rem;transition:color .2s}
-  .nav-links a:hover{color:#e2e8f0}
-  .nav-btn{padding:8px 20px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3);border-radius:8px;color:#a5b4fc !important;font-weight:500;transition:all .2s}
-  .nav-btn:hover{background:rgba(99,102,241,.25);border-color:rgba(99,102,241,.5)}
+  .nav-links a:hover{color:#f1f5f9}
+  .nav-btn{padding:8px 20px;background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.3);border-radius:10px;color:#c4b5fd !important;font-weight:500;transition:all .2s}
+  .nav-btn:hover{background:rgba(167,139,250,.25);border-color:rgba(167,139,250,.5)}
 
   /* Language switcher */
   .lang-switcher{position:relative}
-  .lang-btn{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#94a3b8;padding:6px 14px;font-size:.85rem;cursor:pointer;transition:all .2s;font-family:inherit}
-  .lang-btn:hover{background:rgba(255,255,255,.08);color:#e2e8f0}
-  .lang-dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:#12141a;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:6px;min-width:160px;box-shadow:0 12px 40px rgba(0,0,0,.5);z-index:100}
+  .lang-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#94a3b8;padding:6px 14px;font-size:.85rem;cursor:pointer;transition:all .2s;font-family:inherit}
+  .lang-btn:hover{background:rgba(255,255,255,.1);color:#f1f5f9}
+  .lang-dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:rgba(15,20,35,.9);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:6px;min-width:160px;box-shadow:0 12px 40px rgba(0,0,0,.6);z-index:100}
   .lang-switcher.open .lang-dropdown{display:block}
-  .lang-dropdown a{display:block;padding:8px 12px;color:#94a3b8;text-decoration:none;font-size:.85rem;border-radius:6px;transition:all .15s}
-  .lang-dropdown a:hover{background:rgba(99,102,241,.1);color:#e2e8f0}
-  .lang-dropdown a.lang-active{color:#a5b4fc;background:rgba(99,102,241,.08)}
+  .lang-dropdown a{display:block;padding:8px 12px;color:#94a3b8;text-decoration:none;font-size:.85rem;border-radius:8px;transition:all .15s}
+  .lang-dropdown a:hover{background:rgba(167,139,250,.1);color:#f1f5f9}
+  .lang-dropdown a.lang-active{color:#c4b5fd;background:rgba(167,139,250,.08)}
 
-  .hero{text-align:center;padding:80px 0 60px}
-  .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);border-radius:100px;font-size:.82rem;color:#a5b4fc;margin-bottom:28px}
-  .badge-dot{width:6px;height:6px;background:#818cf8;border-radius:50%;animation:pulse 2s infinite}
+  /* Hero — 2-column */
+  .hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:80px 0 60px}
+  .hero-left{text-align:left}
+  .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(167,139,250,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(167,139,250,.2);border-radius:100px;font-size:.82rem;color:#c4b5fd;margin-bottom:28px}
+  .badge-dot{width:6px;height:6px;background:#a78bfa;border-radius:50%;animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.1;font-weight:800;letter-spacing:-.03em;margin-bottom:20px}
-  .hero h1 .gradient{background:linear-gradient(135deg,#818cf8 0%,#a78bfa 50%,#c4b5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .hero p{font-size:1.1rem;color:#94a3b8;line-height:1.7;max-width:600px;margin:0 auto 36px}
-  .hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.2rem);line-height:1.1;font-weight:800;letter-spacing:-.03em;margin-bottom:20px;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+  .hero h1 .gradient{background:linear-gradient(135deg,#a78bfa 0%,#c4b5fd 50%,#e0d4ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .hero p{font-size:1.05rem;color:#cbd5e1;line-height:1.7;margin-bottom:28px;text-shadow:0 1px 8px rgba(0,0,0,.3)}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+  .hero-other{font-size:.85rem;color:rgba(148,163,184,.8)}
+  .hero-other a{color:#c4b5fd;text-decoration:none}
+  .hero-other a:hover{text-decoration:underline}
+  .hero-right{display:flex;justify-content:center}
+  .screenshot-frame{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 8px 60px rgba(0,0,0,.4),0 0 80px rgba(167,139,250,.12);border:1px solid rgba(255,255,255,.1)}
+  .screenshot-frame img{display:block;width:100%;height:auto;border-radius:15px}
 
-  .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;text-decoration:none;border-radius:12px;font-size:1rem;font-weight:600;transition:all .3s;box-shadow:0 4px 20px rgba(99,102,241,.25)}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(99,102,241,.2),0 8px 30px rgba(99,102,241,.35)}
-  .btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:#e2e8f0;text-decoration:none;border-radius:12px;font-size:1rem;font-weight:500;transition:all .3s}
-  .btn-secondary:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2)}
+  /* Buttons */
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;text-decoration:none;border-radius:12px;font-size:1rem;font-weight:600;transition:all .3s;box-shadow:0 4px 24px rgba(124,58,237,.3)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(167,139,250,.25),0 8px 30px rgba(124,58,237,.4)}
+  .btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:rgba(255,255,255,.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);color:#f1f5f9;text-decoration:none;border-radius:12px;font-size:1rem;font-weight:500;transition:all .3s}
+  .btn-secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
   .btn-arrow{transition:transform .2s}
   .btn-primary:hover .btn-arrow{transform:translateX(3px)}
 
+  /* Downloads section */
+  .dl-section{padding:60px 0}
+  .dl-section h2{font-size:1.6rem;font-weight:700;margin-bottom:8px;letter-spacing:-.02em;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.3)}
+  .dl-subtitle{text-align:center;color:#94a3b8;font-size:.9rem;margin-bottom:36px}
+  .dl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .dl-card{background:rgba(15,20,35,.72);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px;transition:all .3s;display:flex;flex-direction:column}
+  .dl-card:hover{background:rgba(15,20,35,.8);border-color:rgba(167,139,250,.25);box-shadow:0 0 30px rgba(167,139,250,.08)}
+  .dl-card.dl-highlight{border-color:rgba(167,139,250,.35);background:rgba(167,139,250,.06);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+  .dl-card-header{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+  .dl-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2);flex-shrink:0}
+  .dl-icon svg{width:24px;height:24px;fill:#c4b5fd}
+  .dl-card-header h3{font-size:1.1rem;font-weight:600;color:#f1f5f9}
+  .dl-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;text-decoration:none;border-radius:10px;font-size:.95rem;font-weight:600;transition:all .3s;margin-bottom:12px;box-shadow:0 2px 16px rgba(124,58,237,.25)}
+  .dl-btn:hover{transform:translateY(-1px);box-shadow:0 4px 24px rgba(124,58,237,.4)}
+  .dl-btn .dl-size{font-weight:400;opacity:.75;font-size:.85rem}
+  .dl-alt{display:flex;flex-direction:column;gap:8px;margin-top:auto}
+  .dl-alt a{color:#c4b5fd;text-decoration:none;font-size:.85rem;display:flex;align-items:center;gap:6px}
+  .dl-alt a:hover{text-decoration:underline}
+  .dl-alt .dl-alt-size{color:#94a3b8;font-size:.8rem}
+  .dl-note{color:#94a3b8;font-size:.8rem;margin-top:12px}
+  .dl-badge{display:inline-block;padding:2px 8px;background:rgba(167,139,250,.15);border-radius:6px;font-size:.75rem;color:#c4b5fd;font-weight:500;margin-left:6px}
+
+  /* Feature cards */
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;padding:60px 0}
-  .card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:32px;transition:all .3s}
-  .card:hover{background:rgba(255,255,255,.04);border-color:rgba(99,102,241,.2);transform:translateY(-2px)}
-  .card-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.15)}
+  .card{background:rgba(15,20,35,.72);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px;transition:all .3s}
+  .card:hover{background:rgba(15,20,35,.8);border-color:rgba(167,139,250,.2);transform:translateY(-2px);box-shadow:0 0 30px rgba(167,139,250,.06)}
+  .card-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.2)}
   .card h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;color:#f1f5f9}
   .card h3 a{color:inherit;text-decoration:none}
-  .card h3 a:hover{color:#a5b4fc}
-  .card p{color:#94a3b8;font-size:.9rem;line-height:1.65;margin-bottom:12px}
-  .card-link{color:#818cf8;text-decoration:none;font-size:.88rem;font-weight:500}
+  .card h3 a:hover{color:#c4b5fd}
+  .card p{color:#cbd5e1;font-size:.9rem;line-height:1.65;margin-bottom:12px}
+  .card-link{color:#c4b5fd;text-decoration:none;font-size:.88rem;font-weight:500}
   .card-link:hover{text-decoration:underline}
 
-  .about{padding:60px 0;max-width:700px;margin:0 auto}
+  /* About */
+  .about{padding:60px 32px;max-width:760px;margin:0 auto;background:rgba(15,20,35,.72);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.08);border-radius:16px}
   .about h2{font-size:1.6rem;font-weight:700;margin-bottom:16px;letter-spacing:-.02em}
-  .about p{color:#94a3b8;line-height:1.8;margin-bottom:16px;font-size:.95rem}
-  .about ul{color:#94a3b8;line-height:1.8;padding-left:20px;margin-bottom:16px;font-size:.95rem}
+  .about p{color:#cbd5e1;line-height:1.8;margin-bottom:16px;font-size:.95rem}
+  .about ul{color:#cbd5e1;line-height:1.8;padding-left:20px;margin-bottom:16px;font-size:.95rem}
   .about li{margin-bottom:6px}
+  .about a{color:#c4b5fd}
 
+  /* Community */
   .community{padding:60px 0;text-align:center}
   .community h2{font-size:1.6rem;font-weight:700;margin-bottom:12px}
-  .community p{color:#94a3b8;margin-bottom:28px;font-size:1rem}
+  .community p{color:#cbd5e1;margin-bottom:28px;font-size:1rem}
   .community-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
-  footer{text-align:center;padding:40px 0;border-top:1px solid rgba(255,255,255,.05);color:#475569;font-size:.82rem;margin-top:40px}
-  footer a{color:#818cf8;text-decoration:none}
+  footer{text-align:center;padding:40px 0;border-top:1px solid rgba(255,255,255,.06);color:#64748b;font-size:.82rem;margin-top:40px}
+  footer a{color:#c4b5fd;text-decoration:none}
   .footer-links{display:flex;gap:20px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
 
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;text-align:center;gap:32px}
+    .hero-left{text-align:center}
+    .hero-actions{justify-content:center}
+    .hero-other{text-align:center}
+    .dl-grid{grid-template-columns:1fr}
+  }
   @media(max-width:640px){
     .hero{padding:50px 0 40px}
     .hero-actions{flex-direction:column;align-items:center}
     .cards{grid-template-columns:1fr}
     .nav-links{gap:12px}
+    nav{padding:12px 16px}
+    .about{padding:40px 20px}
   }
 </style>
 </head>
 <body>
-<div class="bg-grid"></div>
-<div class="bg-glow"></div>
+<div class="bg-img"></div>
+<div class="bg-overlay"></div>
 
 <div class="container">
   <nav>
     <a href="/" class="logo">San<span>Host</span></a>
     <div class="nav-links">
+      <a href="#downloads">{{nav_download}}</a>
       <a href="https://santale.top">{{nav_server_list}}</a>
       <a href="https://git.sanhost.net/sanasol/f2p-evo">{{nav_source_code}}</a>
       <a href="https://chat.sanhost.net/invite/Tfz4jCK4">{{nav_chat}}</a>
@@ -160,22 +224,85 @@
   </nav>
 
   <section class="hero">
-    <div class="badge"><span class="badge-dot"></span> {{hero_badge}}</div>
-    <h1>{{hero_title_prefix}} <span class="gradient">{{hero_title_gradient}}</span></h1>
-    <p>{{hero_description}}</p>
-    <div class="hero-actions">
-      <a href="https://git.sanhost.net/sanasol/f2p-evo/releases" class="btn-primary">{{hero_btn_download}} <span class="btn-arrow">&rarr;</span></a>
-      <a href="https://hytale.sanhost.net/register" class="btn-secondary">{{hero_btn_host}}</a>
+    <div class="hero-left">
+      <div class="badge"><span class="badge-dot"></span> {{hero_badge}}</div>
+      <h1>{{hero_title_prefix}} <span class="gradient">{{hero_title_gradient}}</span></h1>
+      <p>{{hero_description}}</p>
+      <div class="hero-actions">
+        <a id="hero-dl-btn" href="#downloads" class="btn-primary"
+           data-dl-windows="{{hero_dl_windows}}" data-url-windows="{{dl_windows_url}}"
+           data-dl-macos="{{hero_dl_macos}}" data-url-macos="{{dl_macos_dmg_url}}"
+           data-dl-linux="{{hero_dl_linux}}" data-url-linux="{{dl_linux_appimage_url}}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span id="hero-dl-text">{{hero_dl_generic}}</span>
+        </a>
+        <a href="https://hytale.sanhost.net/register" class="btn-secondary">{{hero_btn_host}}</a>
+      </div>
+      <div class="hero-other"><a href="#downloads">{{hero_other_platforms}}</a></div>
+    </div>
+    <div class="hero-right">
+      <div class="screenshot-frame">
+        <img src="/img/launcher-screenshot.png" alt="F2P Evo Launcher" width="540" height="380" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <section class="dl-section" id="downloads">
+    <h2>{{downloads_title}}</h2>
+    <p class="dl-subtitle">{{release_version}}</p>
+    <div class="dl-grid">
+
+      <!-- Windows -->
+      <div class="dl-card" data-os="windows">
+        <div class="dl-card-header">
+          <div class="dl-icon"><svg viewBox="0 0 256 256"><path d="M0 36.36L104.62 22.02L104.62 122.02L0 123.17ZM117.54 20.46L256 0L256 122.74L117.54 122.74ZM256 133.26L256 256L117.54 235.96L117.54 133.26ZM104.62 134.37L104.62 234.52L0 219.62L0 133.57Z"/></svg></div>
+          <h3>Windows</h3>
+        </div>
+        <a href="{{dl_windows_url}}" class="dl-btn">{{dl_btn_download}} .exe <span class="dl-size">{{dl_windows_size}}</span></a>
+        <p class="dl-note">{{dl_windows_note}}</p>
+      </div>
+
+      <!-- macOS -->
+      <div class="dl-card" data-os="macos">
+        <div class="dl-card-header">
+          <div class="dl-icon"><svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg></div>
+          <h3>macOS</h3>
+        </div>
+        <a href="{{dl_macos_dmg_url}}" class="dl-btn">{{dl_btn_download}} .dmg <span class="dl-size">{{dl_macos_dmg_size}}</span></a>
+        <p class="dl-note">{{dl_macos_note}}</p>
+      </div>
+
+      <!-- Linux -->
+      <div class="dl-card" data-os="linux">
+        <div class="dl-card-header">
+          <div class="dl-icon"><svg viewBox="0 0 24 24"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.645 2.645 0 00-.402-.533 1.45 1.45 0 00-.275-.333c.182 0 .338-.03.465-.067a.615.615 0 00.314-.334c.108-.267 0-.697-.345-1.163-.345-.467-.931-.995-1.788-1.521-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.123 8.123 0 01.647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335.039.003.075.006.11.006.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01c.053 0 .105.005.157.014.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602-.369-.066-.61-.2-.723-.4-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336zm7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8.097 8.097 0 01-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065zm-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"/></svg></div>
+          <h3>Linux</h3>
+        </div>
+        <a href="{{dl_linux_appimage_url}}" class="dl-btn">{{dl_btn_download}} .AppImage <span class="dl-size">{{dl_linux_appimage_size}}</span></a>
+        <div class="dl-alt">
+          <a href="{{dl_linux_deb_url}}">.deb <span class="dl-alt-size">{{dl_linux_deb_size}}</span></a>
+          <a href="{{dl_linux_rpm_url}}">.rpm <span class="dl-alt-size">{{dl_linux_rpm_size}}</span></a>
+        </div>
+        <p class="dl-note">{{dl_linux_note}}</p>
+      </div>
+
+      <!-- Steam Deck -->
+      <div class="dl-card" data-os="linux">
+        <div class="dl-card-header">
+          <div class="dl-icon"><svg viewBox="0 0 24 24"><path d="M8.999 0v4.309c4.242 0 7.694 3.45 7.694 7.691s-3.452 7.691-7.694 7.691V24c6.617 0 12-5.383 12-12s-5.383-12-12-12Zm0 6.011c-3.313 0-6 2.687-5.998 6a5.999 5.999 0 1 0 5.998-6z"/></svg></div>
+          <h3>Steam Deck</h3>
+        </div>
+        <a href="{{dl_linux_appimage_url}}" class="dl-btn">{{dl_btn_download}} .AppImage<span class="dl-badge">{{dl_linux_recommended}}</span> <span class="dl-size">{{dl_linux_appimage_size}}</span></a>
+        <div class="dl-alt">
+          <a href="{{dl_linux_deb_url}}">.deb <span class="dl-alt-size">{{dl_linux_deb_size}}</span></a>
+        </div>
+        <p class="dl-note">{{dl_steamdeck_note}}</p>
+      </div>
+
     </div>
   </section>
 
   <div class="cards">
-    <div class="card">
-      <div class="card-icon">&#128190;</div>
-      <h3><a href="https://git.sanhost.net/sanasol/f2p-evo/releases">{{card_download_title}}</a></h3>
-      <p>{{card_download_text}}</p>
-      <a href="https://git.sanhost.net/sanasol/f2p-evo/releases" class="card-link">{{card_download_link}} &rarr;</a>
-    </div>
     <div class="card">
       <div class="card-icon">&#9889;</div>
       <h3><a href="https://hytale.sanhost.net">{{card_hosting_title}}</a></h3>
@@ -189,16 +316,21 @@
       <a href="https://santale.top" class="card-link">{{card_serverlist_link}} &rarr;</a>
     </div>
     <div class="card">
+      <div class="card-icon">&#128274;</div>
+      <h3>{{card_dualauth_title}}</h3>
+      <p>{{card_dualauth_text}}</p>
+      <a href="https://git.sanhost.net/sanasol/f2p-evo" class="card-link">{{card_dualauth_link}} &rarr;</a>
+    </div>
+    <div class="card">
       <div class="card-icon">&#128187;</div>
       <h3><a href="https://git.sanhost.net/sanasol/f2p-evo">{{card_source_title}}</a></h3>
       <p>{{card_source_text}}</p>
       <a href="https://git.sanhost.net/sanasol/f2p-evo" class="card-link">{{card_source_link}} &rarr;</a>
     </div>
     <div class="card">
-      <div class="card-icon">&#128274;</div>
-      <h3>{{card_dualauth_title}}</h3>
-      <p>{{card_dualauth_text}}</p>
-      <a href="https://git.sanhost.net/sanasol/f2p-evo" class="card-link">{{card_dualauth_link}} &rarr;</a>
+      <div class="card-icon">&#128260;</div>
+      <h3>{{card_autoupdate_title}}</h3>
+      <p>{{card_autoupdate_text}}</p>
     </div>
     <div class="card">
       <div class="card-icon">&#128172;</div>
@@ -245,20 +377,125 @@
 </div>
 <script>
 (function(){
+  // Language auto-detect
   var supported = {ru:1,uk:1,de:1,fr:1,es:1,pt:1,it:1};
-  // Skip if already on a language page or cookie is set
-  if (location.pathname !== '/' || document.cookie.indexOf('sanhost_lang=') !== -1) return;
-  var langs = navigator.languages || [navigator.language || ''];
-  for (var i = 0; i < langs.length; i++) {
-    var code = langs[i].split('-')[0].toLowerCase();
-    if (supported[code]) {
-      document.cookie = 'sanhost_lang=' + code + ';path=/;max-age=31536000;SameSite=Lax';
-      location.replace('/' + code + '/');
-      return;
+  if (location.pathname === '/' && document.cookie.indexOf('sanhost_lang=') === -1) {
+    var langs = navigator.languages || [navigator.language || ''];
+    for (var i = 0; i < langs.length; i++) {
+      var code = langs[i].split('-')[0].toLowerCase();
+      if (supported[code]) {
+        document.cookie = 'sanhost_lang=' + code + ';path=/;max-age=31536000;SameSite=Lax';
+        location.replace('/' + code + '/');
+        return;
+      }
+      if (code === 'en') break;
     }
-    if (code === 'en') break;
+    document.cookie = 'sanhost_lang=en;path=/;max-age=31536000;SameSite=Lax';
   }
-  document.cookie = 'sanhost_lang=en;path=/;max-age=31536000;SameSite=Lax';
+
+  // OS detection
+  var os = 'unknown';
+  try {
+    var p = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '';
+    var ua = navigator.userAgent || '';
+    if (/win/i.test(p)) os = 'windows';
+    else if (/mac/i.test(p)) os = 'macos';
+    else if (/linux/i.test(ua) || /linux/i.test(p)) os = 'linux';
+  } catch(e) {}
+
+  // Highlight matching download card
+  var cards = document.querySelectorAll('.dl-card[data-os]');
+  for (var j = 0; j < cards.length; j++) {
+    if (cards[j].getAttribute('data-os') === os) {
+      cards[j].classList.add('dl-highlight');
+    }
+  }
+
+  // Fetch latest release from Forgejo API and update download links
+  var API = '/api/latest-release';
+  var FALLBACK = 'https://git.sanhost.net/sanasol/f2p-evo/releases';
+
+  function fmtSize(b) {
+    if (!b) return '';
+    var mb = b / (1024 * 1024);
+    return mb >= 1 ? mb.toFixed(1) + ' MB' : Math.round(b / 1024) + ' KB';
+  }
+
+  fetch(API).then(function(r) { return r.json(); }).then(function(data) {
+    var assets = data.assets || [];
+    var dl = { windows: null, macos: null, appimage: null, deb: null, rpm: null };
+
+    for (var i = 0; i < assets.length; i++) {
+      var n = assets[i].name.toLowerCase();
+      if (n.endsWith('.sig') || n.startsWith('updater-') || n.endsWith('.json')) continue;
+      if (n.endsWith('.exe') || n.endsWith('.msi')) dl.windows = assets[i];
+      else if (n.endsWith('.dmg')) dl.macos = assets[i];
+      else if (n.endsWith('.appimage')) dl.appimage = assets[i];
+      else if (n.endsWith('.deb')) dl.deb = assets[i];
+      else if (n.endsWith('.rpm')) dl.rpm = assets[i];
+    }
+
+    // Update version badge
+    var ver = document.querySelector('.dl-subtitle');
+    if (ver && data.tag_name) ver.textContent = data.tag_name;
+
+    // Helper to update a download link
+    function setDl(sel, asset) {
+      if (!asset) return;
+      var el = document.querySelector(sel);
+      if (!el) return;
+      el.href = asset.browser_download_url;
+      var sz = el.querySelector('.dl-size');
+      if (sz) sz.textContent = fmtSize(asset.size);
+    }
+
+    setDl('[data-os="windows"] .dl-btn', dl.windows);
+    setDl('[data-os="macos"] .dl-btn', dl.macos);
+    setDl('[data-os="linux"] .dl-btn', dl.appimage);
+
+    // Linux alt links
+    var altLinks = document.querySelectorAll('[data-os="linux"] .dl-alt a');
+    if (altLinks[0] && dl.deb) {
+      altLinks[0].href = dl.deb.browser_download_url;
+      var ds = altLinks[0].querySelector('.dl-alt-size');
+      if (ds) ds.textContent = fmtSize(dl.deb.size);
+    }
+    if (altLinks[1] && dl.rpm) {
+      altLinks[1].href = dl.rpm.browser_download_url;
+      var rs = altLinks[1].querySelector('.dl-alt-size');
+      if (rs) rs.textContent = fmtSize(dl.rpm.size);
+    }
+
+    // Update hero CTA button based on detected OS
+    var btn = document.getElementById('hero-dl-btn');
+    var txt = document.getElementById('hero-dl-text');
+    if (btn && txt) {
+      var map = {
+        windows: { text: btn.dataset.dlWindows, asset: dl.windows },
+        macos:   { text: btn.dataset.dlMacos, asset: dl.macos },
+        linux:   { text: btn.dataset.dlLinux, asset: dl.appimage }
+      };
+      if (map[os] && map[os].asset) {
+        txt.textContent = map[os].text;
+        btn.href = map[os].asset.browser_download_url;
+      }
+    }
+  }).catch(function() {
+    // On failure, hero button stays as #downloads anchor, card links stay as releases page
+    var btn = document.getElementById('hero-dl-btn');
+    var txt = document.getElementById('hero-dl-text');
+    if (btn && txt) {
+      var labels = {
+        windows: btn.dataset.dlWindows,
+        macos: btn.dataset.dlMacos,
+        linux: btn.dataset.dlLinux
+      };
+      if (labels[os]) {
+        txt.textContent = labels[os];
+        btn.href = FALLBACK;
+      }
+    }
+  });
 })();
 </script>
 </body>

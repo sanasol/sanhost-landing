@@ -2,6 +2,7 @@
 /**
  * Multi-language static site generator for sanhost.net landing page.
  * Reads index.html template + lang/*.json → generates html/{lang}/index.html
+ * Download links are populated client-side via Forgejo API (no build-time fetch).
  */
 
 const fs = require('fs');
@@ -9,10 +10,13 @@ const path = require('path');
 
 const LANG_DIR = path.join(__dirname, 'lang');
 const HTML_DIR = path.join(__dirname, 'html');
+const IMG_SRC = path.join(__dirname, 'img');
+const IMG_DST = path.join(HTML_DIR, 'img');
 const TEMPLATE = path.join(__dirname, 'template.html');
 
 const SUPPORTED_LANGS = ['en', 'ru', 'uk', 'de', 'fr', 'es', 'pt', 'it'];
 const BASE_URL = 'https://sanhost.net';
+const RELEASES_PAGE = 'https://git.sanhost.net/sanasol/f2p-evo/releases';
 
 function loadTranslations(lang) {
   const file = path.join(LANG_DIR, `${lang}.json`);
@@ -72,8 +76,40 @@ function generateOgUrl(lang) {
   return lang === 'en' ? `${BASE_URL}/` : `${BASE_URL}/${lang}/`;
 }
 
+function copyDir(src, dst) {
+  if (!fs.existsSync(src)) return;
+  fs.mkdirSync(dst, { recursive: true });
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const srcPath = path.join(src, entry.name);
+    const dstPath = path.join(dst, entry.name);
+    if (entry.isDirectory()) {
+      copyDir(srcPath, dstPath);
+    } else {
+      fs.copyFileSync(srcPath, dstPath);
+    }
+  }
+}
+
 function build() {
   const template = fs.readFileSync(TEMPLATE, 'utf8');
+
+  // Static fallback values — all point to releases page, updated client-side
+  const releaseData = {
+    release_version: '',
+    dl_windows_url: RELEASES_PAGE,
+    dl_windows_size: '',
+    dl_macos_dmg_url: RELEASES_PAGE,
+    dl_macos_dmg_size: '',
+    dl_linux_appimage_url: RELEASES_PAGE,
+    dl_linux_appimage_size: '',
+    dl_linux_deb_url: RELEASES_PAGE,
+    dl_linux_deb_size: '',
+    dl_linux_rpm_url: RELEASES_PAGE,
+    dl_linux_rpm_size: '',
+  };
+
+  // Copy img/ to html/img/
+  copyDir(IMG_SRC, IMG_DST);
 
   for (const lang of SUPPORTED_LANGS) {
     const translations = loadTranslations(lang);
@@ -84,10 +120,12 @@ function build() {
     translations.canonical_url = generateCanonical(lang);
     translations.og_url = generateOgUrl(lang);
 
+    // Add release fallbacks
+    Object.assign(translations, releaseData);
+
     const html = replaceAll(template, translations);
 
     if (lang === 'en') {
-      // English is the default — no prefix
       fs.writeFileSync(path.join(HTML_DIR, 'index.html'), html);
       console.log(`Generated: html/index.html (${lang})`);
     } else {
