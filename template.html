@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{meta_title}}</title>
 <meta name="description" content="{{meta_description}}">
-<meta name="keywords" content="hytale f2p, hytale free to play, hytale multiplayer, hytale server, free hytale, hytale launcher, hytale server list, hytale server hosting">
+<meta name="keywords" content="hytale f2p, hytale free to play, hytale multiplayer, hytale server, free hytale, hytale launcher, hytale server list">
 <link rel="canonical" href="{{canonical_url}}">
 <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 <link rel="apple-touch-icon" href="/favicon.jpg">
@@ -41,7 +41,7 @@
   "@type": "Organization",
   "name": "SanHost - Hytale F2P",
   "url": "https://sanhost.net",
-  "description": "Open-source Hytale F2P project providing free multiplayer servers, launcher, and server hosting.",
+  "description": "Open-source Hytale F2P project providing a launcher, dual authentication, and community server discovery.",
   "sameAs": [
     "https://t.me/sanhostnet",
     "https://t.me/hf2p_og",
@@ -58,7 +58,7 @@
   "@type": "WebSite",
   "name": "SanHost - Hytale F2P",
   "url": "https://sanhost.net",
-  "description": "Hytale F2P community hub - free servers, launcher, and server list."
+  "description": "Hytale F2P community hub - launcher, server list, and open-source tools."
 }
 </script>
 
@@ -99,9 +99,6 @@
   .nav-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
   .nav-links a{color:#94a3b8;text-decoration:none;font-size:.9rem;transition:color .2s}
   .nav-links a:hover{color:#f1f5f9}
-  .nav-btn{padding:8px 20px;background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.3);border-radius:10px;color:#c4b5fd !important;font-weight:500;transition:all .2s}
-  .nav-btn:hover{background:rgba(167,139,250,.25);border-color:rgba(167,139,250,.5)}
-
   /* Language switcher */
   .lang-switcher{position:relative}
   .lang-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#94a3b8;padding:6px 14px;font-size:.85rem;cursor:pointer;transition:all .2s;font-family:inherit}
@@ -218,7 +215,6 @@
       <a href="https://santale.top">{{nav_server_list}}</a>
       <a href="https://git.sanhost.net/sanasol/f2p-evo">{{nav_source_code}}</a>
       <a href="https://chat.sanhost.net/invite/Tfz4jCK4">{{nav_chat}}</a>
-      <a href="https://hytale.sanhost.net" class="nav-btn">{{nav_free_server}}</a>
       {{language_switcher}}
     </div>
   </nav>
@@ -236,7 +232,6 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
           <span id="hero-dl-text">{{hero_dl_generic}}</span>
         </a>
-        <a href="https://hytale.sanhost.net/register" class="btn-secondary">{{hero_btn_host}}</a>
       </div>
       <div class="hero-other"><a href="#downloads">{{hero_other_platforms}}</a></div>
     </div>
@@ -304,12 +299,6 @@
 
   <div class="cards">
     <div class="card">
-      <div class="card-icon">&#9889;</div>
-      <h3><a href="https://hytale.sanhost.net">{{card_hosting_title}}</a></h3>
-      <p>{{card_hosting_text}}</p>
-      <a href="https://hytale.sanhost.net/register" class="card-link">{{card_hosting_link}} &rarr;</a>
-    </div>
-    <div class="card">
       <div class="card-icon">&#127760;</div>
       <h3><a href="https://santale.top">{{card_serverlist_title}}</a></h3>
       <p>{{card_serverlist_text}}</p>
@@ -347,7 +336,6 @@
     <ul>
       <li>{{about_item_launcher}}</li>
       <li>{{about_item_dualauth}}</li>
-      <li>{{about_item_hosting}}</li>
       <li>{{about_item_serverlist}}</li>
     </ul>
     <p>{{about_p3}}</p>
@@ -365,7 +353,6 @@
 
   <footer>
     <div class="footer-links">
-      <a href="https://hytale.sanhost.net">{{footer_hosting}}</a>
       <a href="https://santale.top">{{footer_server_list}}</a>
       <a href="https://git.sanhost.net/sanasol/f2p-evo">{{footer_source_code}}</a>
       <a href="https://chat.sanhost.net/invite/Tfz4jCK4">{{footer_chat}}</a>
