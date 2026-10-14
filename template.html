@@ -134,6 +134,18 @@
   .btn-arrow{transition:transform .2s}
   .btn-primary:hover .btn-arrow{transform:translateX(3px)}
 
+  /* Community server */
+  .server-promo{display:flex;align-items:center;gap:24px;padding:28px 32px;background:rgba(15,20,35,.72);border:1px solid rgba(167,139,250,.25);border-radius:16px}
+  .server-promo-content{flex:1;min-width:0}
+  .server-promo-label{color:#c4b5fd;font-size:.85rem;margin-bottom:8px}
+  .server-promo h2{font-size:1.6rem;margin-bottom:10px}
+  .server-promo p{color:#cbd5e1;line-height:1.65;max-width:65ch}
+  .server-promo-address{margin-top:12px;font-size:.9rem}
+  .server-promo code{color:#f1f5f9}
+  .server-promo .btn-secondary{flex-shrink:0}
+  .server-promo a:focus-visible{outline:2px solid #c4b5fd;outline-offset:4px}
+  @media(max-width:640px){.server-promo{flex-direction:column;align-items:flex-start;padding:24px}.server-promo .btn-secondary{width:100%;justify-content:center}}
+
   /* Downloads section */
   .dl-section{padding:60px 0}
   .dl-section h2{font-size:1.6rem;font-weight:700;margin-bottom:8px;letter-spacing:-.02em;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.3)}
@@ -240,6 +252,16 @@
         <img src="/img/launcher-screenshot.png" alt="F2P Evo Launcher" width="540" height="380" loading="eager">
       </div>
     </div>
+  </section>
+
+  <section class="server-promo" aria-labelledby="server-promo-title">
+    <div class="server-promo-content">
+      <div class="server-promo-label">Hytale F2P PvE</div>
+      <h2 id="server-promo-title">Sanasol Adventure</h2>
+      <p>{{server_promo_description}}</p>
+      <p class="server-promo-address">{{server_promo_address}}: <code>ht.vboro.de:5720</code></p>
+    </div>
+    <a href="https://santale.top/servers/2" class="btn-secondary">{{server_promo_link}}</a>
   </section>
 
   <section class="dl-section" id="downloads">

@@ -24,6 +24,10 @@
   "hero_dl_generic": "Download Launcher",
   "hero_other_platforms": "All platforms & versions \u2193",
 
+  "server_promo_description": "Explore the world, complete quests, trade with NPCs and build your own settlement — solo or with friends.",
+  "server_promo_address": "Server address",
+  "server_promo_link": "View server",
+
   "downloads_title": "Download F2P Evo Launcher",
   "dl_btn_download": "Download",
   "dl_windows_note": "Windows 10+ required",

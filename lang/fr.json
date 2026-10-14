@@ -24,6 +24,10 @@
   "hero_dl_generic": "Télécharger le Launcher",
   "hero_other_platforms": "Toutes les plateformes & versions ↓",
 
+  "server_promo_description": "Explore le monde, accomplis des quêtes, commerce avec les PNJ et construis ta propre colonie — en solo ou avec des amis.",
+  "server_promo_address": "Adresse du serveur",
+  "server_promo_link": "Voir le serveur",
+
   "downloads_title": "Télécharger F2P Evo Launcher",
   "dl_btn_download": "Télécharger",
   "dl_windows_note": "Windows 10+ requis",
